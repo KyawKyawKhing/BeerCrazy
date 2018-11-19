@@ -12,17 +12,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="BeerItemCollectionViewCell" id="gTV-IL-0wX" customClass="BeerItemCollectionViewCell" customModule="BeerCrazy" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="118" height="291"/>
+            <rect key="frame" x="0.0" y="0.0" width="118" height="169"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="118" height="291"/>
+                <rect key="frame" x="0.0" y="0.0" width="118" height="169"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFb-LO-tcO">
-                        <rect key="frame" x="0.0" y="0.0" width="118" height="291"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFb-LO-tcO" customClass="CardView" customModule="BeerCrazy" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="110" height="153"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EF-ud-mgD">
-                                <rect key="frame" x="0.0" y="251" width="118" height="40"/>
+                                <rect key="frame" x="0.0" y="113" width="112" height="40"/>
                                 <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="uBu-Vz-QvL"/>
@@ -32,18 +32,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beer" translatesAutoresizingMaskIntoConstraints="NO" id="2jd-5V-UnA">
-                                <rect key="frame" x="24" y="8" width="70" height="235"/>
+                                <rect key="frame" x="48" y="16" width="14" height="81"/>
+                                <color key="backgroundColor" red="0.74197454510000005" green="0.86986201129999996" blue="0.8735362887" alpha="0.93045774650000002" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.74197454510000005" green="0.86986201129999996" blue="0.8735362887" alpha="0.93045774650000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4EF-ud-mgD" firstAttribute="top" secondItem="2jd-5V-UnA" secondAttribute="bottom" constant="8" id="LLQ-f4-QBf"/>
-                            <constraint firstAttribute="trailing" secondItem="4EF-ud-mgD" secondAttribute="trailing" id="bXD-L7-wAL"/>
-                            <constraint firstAttribute="trailing" secondItem="2jd-5V-UnA" secondAttribute="trailing" constant="24" id="mWR-ni-cR1"/>
+                            <constraint firstItem="4EF-ud-mgD" firstAttribute="top" secondItem="2jd-5V-UnA" secondAttribute="bottom" constant="16" id="LLQ-f4-QBf"/>
+                            <constraint firstAttribute="trailing" secondItem="4EF-ud-mgD" secondAttribute="trailing" constant="-2" id="bXD-L7-wAL"/>
+                            <constraint firstAttribute="trailing" secondItem="2jd-5V-UnA" secondAttribute="trailing" constant="48" id="mWR-ni-cR1"/>
                             <constraint firstItem="4EF-ud-mgD" firstAttribute="leading" secondItem="TFb-LO-tcO" secondAttribute="leading" id="pz5-V3-b5h"/>
-                            <constraint firstItem="2jd-5V-UnA" firstAttribute="top" secondItem="TFb-LO-tcO" secondAttribute="top" constant="8" id="r55-nC-Vkt"/>
+                            <constraint firstItem="2jd-5V-UnA" firstAttribute="top" secondItem="TFb-LO-tcO" secondAttribute="top" constant="16" id="r55-nC-Vkt"/>
                             <constraint firstAttribute="bottom" secondItem="4EF-ud-mgD" secondAttribute="bottom" id="uAg-hG-t2V"/>
-                            <constraint firstItem="2jd-5V-UnA" firstAttribute="leading" secondItem="TFb-LO-tcO" secondAttribute="leading" constant="24" id="weq-uI-Or8"/>
+                            <constraint firstItem="2jd-5V-UnA" firstAttribute="leading" secondItem="TFb-LO-tcO" secondAttribute="leading" constant="48" id="weq-uI-Or8"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -51,16 +52,16 @@
             <constraints>
                 <constraint firstItem="TFb-LO-tcO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="82X-Wj-LuV"/>
                 <constraint firstItem="TFb-LO-tcO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SEf-S3-9rV"/>
-                <constraint firstAttribute="trailing" secondItem="TFb-LO-tcO" secondAttribute="trailing" id="pWG-B4-hvs"/>
-                <constraint firstAttribute="bottom" secondItem="TFb-LO-tcO" secondAttribute="bottom" id="q5Z-h8-MAI"/>
+                <constraint firstAttribute="trailing" secondItem="TFb-LO-tcO" secondAttribute="trailing" constant="8" id="pWG-B4-hvs"/>
+                <constraint firstAttribute="bottom" secondItem="TFb-LO-tcO" secondAttribute="bottom" constant="16" id="q5Z-h8-MAI"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="118" height="291"/>
+            <size key="customSize" width="118" height="169"/>
             <connections>
                 <outlet property="ivBeerImage" destination="2jd-5V-UnA" id="QEW-Yc-MWd"/>
                 <outlet property="lblBeerName" destination="4EF-ud-mgD" id="Dhi-CH-NG7"/>
             </connections>
-            <point key="canvasLocation" x="192" y="262.21889055472263"/>
+            <point key="canvasLocation" x="192" y="207.34632683658174"/>
         </collectionViewCell>
     </objects>
     <resources>

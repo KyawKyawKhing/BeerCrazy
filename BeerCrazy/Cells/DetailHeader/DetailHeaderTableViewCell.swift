@@ -10,6 +10,7 @@ import UIKit
 
 class DetailHeaderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblBeerName: UILabel!
     @IBOutlet weak var lblTagline: UILabel!
     @IBOutlet weak var ivBeerItem: UIImageView!
     @IBOutlet weak var lblDescription: UILabel!
@@ -46,6 +47,7 @@ class DetailHeaderTableViewCell: UITableViewCell {
     
     func setData(data:BeerVO){
         self.data = data
+        lblBeerName.text = data.name
         lblTagline.text = data.tagline
         ivBeerItem.sd_setImage(with: URL(string: data.imageURL), placeholderImage: UIImage(named: "beer"))
         lblDescription.text = data.description

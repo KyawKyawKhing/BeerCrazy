@@ -48,7 +48,7 @@ class DetailViewController: UIViewController {
         
 //        ivBeerImage.sd_setImage(with: URL(string: data.imageURL), placeholderImage: UIImage(named: "beer"))
 //        lblDesp.text = data.description
-        self.navigationItem.title = data.name
+        self.navigationItem.title = "Detail"
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()

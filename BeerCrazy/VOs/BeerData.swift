@@ -8,22 +8,22 @@
 
 import Foundation
 struct BeerVO: Codable {
-    let id: Int
-    let name, tagline, firstBrewed, description: String
-    let imageURL: String
-    let abv: Double
-    let ibu: Double?
-    let targetFg: Int
-    let targetOg: Double
-    let ebc: Int?
-    let srm, ph: Double?
-    let attenuationLevel: Double
-    let volume, boilVolume: BoilVolume
-    let method: Method
-    let ingredients: Ingredients
-    let foodPairing: [String]
-    let brewersTips: String
-    let contributedBy: ContributedBy
+    var id: Int
+    var name, tagline, firstBrewed, description: String
+    var imageURL: String
+    var abv: Double
+    var ibu: Double?
+    var targetFg: Int
+    var targetOg: Double
+    var ebc: Int?
+    var srm, ph: Double?
+    var attenuationLevel: Double
+    var volume, boilVolume: BoilVolume
+    var method: Method
+    var ingredients: Ingredients
+    var foodPairing: [String]
+    var brewersTips: String
+    var contributedBy: ContributedBy
     
     enum CodingKeys: String, CodingKey {
         case id, name, tagline
@@ -62,16 +62,16 @@ enum ContributedBy: String, Codable {
 }
 
 struct Ingredients: Codable {
-    let malt: [Malt]
-    let hops: [Hop]
-    let yeast: String
+    var malt: [Malt]
+    var hops: [Hop]
+    var yeast: String
 }
 
 struct Hop: Codable {
-    let name: String
-    let amount: BoilVolume
-    let add: Add
-    let attribute: Attribute
+    var name: String
+    var amount: BoilVolume
+    var add: Add
+    var attribute: Attribute
 }
 
 enum Add: String, Codable {
@@ -89,8 +89,8 @@ enum Attribute: String, Codable {
 }
 
 struct Malt: Codable {
-    let name: String
-    let amount: BoilVolume
+    var name: String
+    var amount: BoilVolume
 }
 
 struct Method: Codable {

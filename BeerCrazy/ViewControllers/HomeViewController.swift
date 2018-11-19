@@ -18,15 +18,39 @@ class HomeViewController: UIViewController {
         Utils.cellRegister(nibName: "BeerItemCollectionViewCell", collectionView: beerListCollectionView)
         beerListCollectionView.dataSource  = self
         beerListCollectionView.delegate = self
-        BeerCrazyModel.init().getAllBeer(callback:self)
+        
         print("Get Data From Network\(beerItemList.count)")
+    }
+    override func viewWillAppear(_ animated: Bool) {
+//        getBeerList()
+        CustomLoadingView.shared().showActivityIndicator(uiView: self.view)
+        BeerModel.shared().getAllBeer(context: managedObjectContext, success: { (beerList) in
+            self.beerItemList = beerList
+            self.beerListCollectionView.reloadData()
+            CustomLoadingView.shared().hideActivityIndicator(uiView: self.view)
+            
+        }) { (error) in
+            
+        CustomLoadingView.shared().hideActivityIndicator(uiView: self.view)
+            
+        }
+    }
+    func getBeerList() {
+        do {
+            beerItemList = try self.managedObjectContext.fetch(Beer.fetchRequest()) as! [BeerVO]
+            self.beerListCollectionView.reloadData()
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
     }
 
 }
+
 extension HomeViewController:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.view.frame.width/3-9
-        return CGSize(width: width, height: width*2.5)
+        let width = self.view.frame.width/2-20
+        return CGSize(width: width, height: width*1.8)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let navigationVC = self.storyboard!.instantiateViewController(withIdentifier: "DetailViewController") as! UINavigationController

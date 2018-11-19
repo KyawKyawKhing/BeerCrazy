@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Beer" representedClassName="Beer" syncable="YES" codeGenerationType="class">
+        <attribute name="beer_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brewers_tips" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contributed_by" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="first_brewed" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ingredient_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tagline" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Food_Pairing" representedClassName="Food_Pairing" syncable="YES" codeGenerationType="class">
+        <attribute name="beer_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="food_name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Hops" representedClassName="Hops" syncable="YES" codeGenerationType="class">
+        <attribute name="add" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="amount_unit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="amount_value" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ingredient_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Ingredient" representedClassName="Ingredient" syncable="YES" codeGenerationType="class">
+        <attribute name="beer_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ingredient_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="yeast" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Malts" representedClassName="Malts" syncable="YES" codeGenerationType="class">
+        <attribute name="amount_unit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="amount_value" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ingredient_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Beer" positionX="-45" positionY="0" width="128" height="180"/>
+        <element name="Food_Pairing" positionX="-36" positionY="63" width="128" height="75"/>
+        <element name="Hops" positionX="0" positionY="81" width="128" height="30"/>
+        <element name="Ingredient" positionX="-45" positionY="54" width="128" height="90"/>
+        <element name="Malts" positionX="-18" positionY="72" width="128" height="30"/>
+    </elements>
+</model>
