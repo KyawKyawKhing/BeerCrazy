@@ -19,10 +19,15 @@ class HomeViewController: UIViewController {
         beerListCollectionView.dataSource  = self
         beerListCollectionView.delegate = self
         
+        getBeerList()
+        
         print("Get Data From Network\(beerItemList.count)")
     }
     override func viewWillAppear(_ animated: Bool) {
-//        getBeerList()
+    
+        
+    }
+    func getBeerList() {
         CustomLoadingView.shared().showActivityIndicator(uiView: self.view)
         BeerModel.shared().getAllBeer(context: managedObjectContext, success: { (beerList) in
             self.beerItemList = beerList
@@ -31,20 +36,10 @@ class HomeViewController: UIViewController {
             
         }) { (error) in
             
-        CustomLoadingView.shared().hideActivityIndicator(uiView: self.view)
+            CustomLoadingView.shared().hideActivityIndicator(uiView: self.view)
             
         }
     }
-    func getBeerList() {
-        do {
-            beerItemList = try self.managedObjectContext.fetch(Beer.fetchRequest()) as! [BeerVO]
-            self.beerListCollectionView.reloadData()
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
-        
-    }
-
 }
 
 extension HomeViewController:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
@@ -71,14 +66,3 @@ extension HomeViewController:UICollectionViewDataSource{
     }
 }
 
-extension HomeViewController:LoadDataCallback{
-    func onLoadDataSucceed(dataList: [BeerVO]) {
-        beerItemList = dataList
-        self.beerListCollectionView.reloadData()
-        print("Load Data Succeed => \(dataList.count)")
-    }
-    
-    func onLoadDataFailed(errormessage: String) {
-        print("Load Data Failed => \(errormessage)")
-    }
-}

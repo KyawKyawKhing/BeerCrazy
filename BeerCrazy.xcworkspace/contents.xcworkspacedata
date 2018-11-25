@@ -2,36 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Hops+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Hops+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Ingredient+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Ingredient+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Food_Pairing+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Food_Pairing+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Malts+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Malts+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Beer+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Beer+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:BeerCrazy.xcodeproj">
    </FileRef>
    <FileRef

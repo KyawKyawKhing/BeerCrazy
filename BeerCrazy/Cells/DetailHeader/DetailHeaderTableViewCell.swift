@@ -53,7 +53,7 @@ class DetailHeaderTableViewCell: UITableViewCell {
         lblDescription.text = data.description
         lblBrewerTip.text = data.brewersTips
         lblFirstBrewed.text = data.firstBrewed
-        lblContributedBy.text = data.contributedBy.rawValue
+        lblContributedBy.text = data.contributedBy!.rawValue
     }
     
 }

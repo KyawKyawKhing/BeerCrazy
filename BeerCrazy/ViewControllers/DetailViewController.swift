@@ -109,9 +109,9 @@ extension DetailViewController:UITableViewDataSource{
         if section == 0{
             return 1
         }else if section == 1{
-            return data.ingredients.malt.count
+            return data.ingredients!.malt.count
         }else if section == 2{
-            return data.ingredients.hops.count
+            return data.ingredients!.hops.count
         }else if section == 3{
             return 1
         }else if section == 4{
@@ -128,22 +128,22 @@ extension DetailViewController:UITableViewDataSource{
             return cell
         }else if indexPath.section == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailBodyTableViewCell", for: indexPath) as! DetailBodyTableViewCell
-            let name = "\(data.ingredients.malt[indexPath.row].name) ( \(data.ingredients.malt[indexPath.row].amount.value) \(data.ingredients.malt[indexPath.row].amount.unit) )"
+            let name = "\(data.ingredients!.malt[indexPath.row].name) ( \(data.ingredients!.malt[indexPath.row].amount.value) \(data.ingredients!.malt[indexPath.row].amount.unit) )"
             cell.lblIcon.text = beerIcon
             cell.lblName.text = name
             return cell
         }else if indexPath.section == 2{
             let cell = tableView.dequeueReusableCell(withIdentifier: "HopsTableViewCell", for: indexPath) as! HopsTableViewCell
-            let name = "\(data.ingredients.hops[indexPath.row].name) ( \(data.ingredients.hops[indexPath.row].amount.value) \(data.ingredients.hops[indexPath.row].amount.unit ) )"
+            let name = "\(data.ingredients!.hops[indexPath.row].name) ( \(data.ingredients!.hops[indexPath.row].amount.value) \(data.ingredients!.hops[indexPath.row].amount.unit ) )"
             cell.lblIcon.text = beerIcon
             cell.lblName.text = name
-            let addedAttribute = "add \( data.ingredients.hops[indexPath.row].attribute) at \(data.ingredients.hops[indexPath.row].add)"
+            let addedAttribute = "add \( data.ingredients!.hops[indexPath.row].attribute) at \(data.ingredients!.hops[indexPath.row].add)"
             cell.lblAddedAttribute.text = addedAttribute
             return cell
         }else if indexPath.section == 3{
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailBodyTableViewCell", for: indexPath) as! DetailBodyTableViewCell
             cell.lblIcon.text = beerIcon
-            cell.lblName.text = data.ingredients.yeast
+            cell.lblName.text = data.ingredients!.yeast
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailBodyTableViewCell", for: indexPath) as! DetailBodyTableViewCell

@@ -17,13 +17,14 @@ struct BeerVO: Codable {
     var targetOg: Double
     var ebc: Int?
     var srm, ph: Double?
-    var attenuationLevel: Double
-    var volume, boilVolume: BoilVolume
-    var method: Method
-    var ingredients: Ingredients
+    var attenuationLevel: Double?
+    var volume: BoilVolume? = nil
+    var boilVolume: BoilVolume? = nil
+    var method: Method?
+    var ingredients: Ingredients?
     var foodPairing: [String]
     var brewersTips: String
-    var contributedBy: ContributedBy
+    var contributedBy: ContributedBy?
     
     enum CodingKeys: String, CodingKey {
         case id, name, tagline
@@ -42,6 +43,8 @@ struct BeerVO: Codable {
         case brewersTips = "brewers_tips"
         case contributedBy = "contributed_by"
     }
+    
+    
 }
 
 struct BoilVolume: Codable {
